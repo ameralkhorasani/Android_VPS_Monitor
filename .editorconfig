@@ -1,0 +1,38 @@
+# EditorConfig — https://editorconfig.org
+# Keeps formatting consistent across editors and contributors.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+max_line_length = 100
+
+[*.{kt,kts}]
+indent_size = 4
+# Kotlin official style
+ij_kotlin_code_style_defaults = KOTLIN_OFFICIAL
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ij_kotlin_name_count_to_use_star_import = 2147483647
+ij_kotlin_name_count_to_use_star_import_for_members = 2147483647
+
+[*.{xml,yml,yaml,json}]
+indent_size = 2
+
+[*.md]
+# Trailing double-space is a hard line break in Markdown
+trim_trailing_whitespace = false
+
+[*.{sh,bash}]
+indent_size = 2
+end_of_line = lf
+
+[Makefile]
+indent_style = tab
+
+[gradlew.bat]
+end_of_line = crlf

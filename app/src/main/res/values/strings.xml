@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        App-level strings. Screen text is still inlined in the composables; new
+        user-facing strings belong here so the app stays translatable.
+        See CONTRIBUTING.md.
+    -->
+    <string name="app_name">Outpost</string>
+</resources>

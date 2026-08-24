@@ -1,0 +1,71 @@
+name: Feature request
+description: Suggest an idea or improvement
+title: "[Feature]: "
+labels: ["enhancement", "needs triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Please check the
+        [Roadmap](https://github.com/ameralkhorasani/Android_VPS_Terminal#roadmap)
+        and existing issues first — it may already be planned.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      options:
+        - label: I have searched existing issues and the roadmap for a duplicate
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: |
+        Describe the situation you run into, not just the feature you want.
+        Understanding the problem often reveals a better solution.
+      placeholder: "When I am away from my desk and a container dies, I currently have to ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like the app to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have considered
+      description: Other approaches, or how you work around it today.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area does this affect?
+      options:
+        - Terminal
+        - Monitoring / metrics
+        - Port forwarding / tunnels
+        - Docker
+        - Logs
+        - Remote editor (code-server)
+        - Alerts
+        - Server management
+        - Settings / theming
+        - Accessibility
+        - New feature area
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Would you be willing to work on this?
+      options:
+        - label: I would be interested in implementing this myself

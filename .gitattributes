@@ -1,0 +1,31 @@
+# Normalise line endings so Windows and Unix contributors do not fight.
+* text=auto eol=lf
+
+# Scripts must keep LF or they break on the server.
+*.sh   text eol=lf
+gradlew text eol=lf
+
+# Windows-only files keep CRLF.
+*.bat      text eol=crlf
+gradlew.bat text eol=crlf
+
+# Binary — never diff or normalise.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.jar  binary
+*.apk  binary
+*.aab  binary
+*.keystore binary
+*.jks  binary
+*.ttf  binary
+*.otf  binary
+
+# Vendored third-party assets — exclude from language stats and diffs.
+app/src/main/assets/terminal/xterm.js            linguist-vendored
+app/src/main/assets/terminal/xterm.css           linguist-vendored
+app/src/main/assets/terminal/xterm-addon-fit.js  linguist-vendored
+gradle/wrapper/gradle-wrapper.jar                linguist-vendored
