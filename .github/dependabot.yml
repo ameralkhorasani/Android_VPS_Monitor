@@ -1,0 +1,40 @@
+version: 2
+
+updates:
+  - package-ecosystem: gradle
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "deps"
+    groups:
+      # AndroidX and Compose move together; separate PRs for each artifact is noise.
+      androidx:
+        patterns:
+          - "androidx.*"
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin*"
+          - "org.jetbrains.kotlinx*"
+      hilt:
+        patterns:
+          - "com.google.dagger*"
+    ignore:
+      # AGP and the Kotlin plugin are pinned deliberately and upgraded by hand,
+      # because they must stay compatible with the KSP and Compose compiler versions.
+      - dependency-name: "com.android.tools.build:gradle"
+      - dependency-name: "com.google.devtools.ksp*"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    labels:
+      - dependencies
+      - ci
+    commit-message:
+      prefix: "ci"

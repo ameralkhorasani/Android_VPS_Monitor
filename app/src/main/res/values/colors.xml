@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Only the colours the Android framework needs before Compose takes over.
+        The real palette lives in ui/theme/Palette.kt; these mirror it so the
+        launch window does not flash a mismatched background.
+    -->
+    <color name="window_background">#FFF6F7F9</color>
+    <color name="ic_launcher_background">#FF0D0D0D</color>
+</resources>

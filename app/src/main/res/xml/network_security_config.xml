@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Everything on the open network must be TLS. -->
+    <base-config cleartextTrafficPermitted="false" />
+
+    <!--
+        An SSH port forward terminates on this device's loopback interface: traffic never
+        leaves the phone in the clear, it is handed straight to the encrypted SSH channel.
+        Cleartext is therefore permitted for loopback only.
+    -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">localhost</domain>
+    </domain-config>
+</network-security-config>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Outpost Terminal</title>
+    <!--
+        xterm is vendored into assets rather than pulled from a CDN. Loading it over the
+        network meant the terminal silently rendered nothing whenever the phone was on a
+        captive portal, on a network that blocks jsdelivr, or simply offline - and with no
+        Terminal object there was no textarea, so tapping the screen could never raise the
+        keyboard. That is what "cannot type" looked like.
+    -->
+    <link rel="stylesheet" href="xterm.css" />
+    <script src="xterm.js"></script>
+    <script src="xterm-addon-fit.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0D0D0D;
+            overflow: hidden;
+            /* Stop the WebView hijacking taps as text-selection gestures. */
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        #terminal {
+            width: 100%;
+            height: 100%;
+        }
+        /* Wider, easier-to-hit scrollbar on a touch screen. */
+        .xterm-viewport::-webkit-scrollbar { width: 8px; }
+        .xterm-viewport::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.5);
+            border-radius: 4px;
+        }
+        #boot-error {
+            display: none;
+            box-sizing: border-box;
+            padding: 20px;
+            font-family: -apple-system, Roboto, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #F87171;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <div id="boot-error">
+        Terminal engine failed to load.<br />
+        Reinstall the app - the xterm assets are missing from this build.
+    </div>
+    <script src="xterm_bridge.js"></script>
+</body>
+</html>

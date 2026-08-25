@@ -1,0 +1,20 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/ameralkhorasani/Android_VPS_Monitor/security/advisories/new
+    about: >-
+      Do NOT open a public issue for security problems. Use private vulnerability
+      reporting instead. See SECURITY.md for scope.
+
+  - name: 💬 Ask a question or discuss an idea
+    url: https://github.com/ameralkhorasani/Android_VPS_Monitor/discussions
+    about: >-
+      For usage questions, setup help, and open-ended ideas that are not yet a
+      concrete bug report or feature request.
+
+  - name: 📖 Read the documentation
+    url: https://github.com/ameralkhorasani/Android_VPS_Monitor#readme
+    about: >-
+      Build instructions, architecture notes, and the security model are documented
+      in the README and the docs/ directory.

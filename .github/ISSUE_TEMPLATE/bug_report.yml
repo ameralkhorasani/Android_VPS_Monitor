@@ -1,0 +1,110 @@
+name: Bug report
+description: Something is not working as expected
+title: "[Bug]: "
+labels: ["bug", "needs triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug.
+
+        ⚠️ **Before you write anything: scrub your server details.**
+        Replace hostnames, IP addresses, usernames and any key material with
+        placeholders such as `your.vps.example.com` and `your-username`.
+        Never paste a private key into a public issue.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      options:
+        - label: I have searched existing issues for a duplicate
+          required: true
+        - label: I have removed all hostnames, usernames, IPs and key material from this report
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the Overview screen
+        2. Tap ...
+        3. See the error
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area of the app?
+      options:
+        - Terminal
+        - Monitoring / metrics
+        - Port forwarding / tunnels
+        - Docker
+        - Logs
+        - Remote editor (code-server)
+        - Alerts
+        - Adding or editing a server
+        - Settings / theming
+        - App startup or crash
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      placeholder: "1.0.0, or the commit SHA if you built from source"
+    validations:
+      required: true
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version and device
+      placeholder: "Android 14, Pixel 7"
+    validations:
+      required: true
+
+  - type: input
+    id: server-os
+    attributes:
+      label: Server operating system
+      description: Distribution and version. Relevant for anything that parses server output.
+      placeholder: "Debian 12, Ubuntu 24.04, Alpine 3.20 ..."
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: |
+        Paste any error message or stack trace. This is rendered as code, so no
+        backticks needed.
+
+        **Check once more that hostnames, usernames and IPs are redacted.**
+      render: shell
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots (redacted), context, or things you already tried.
